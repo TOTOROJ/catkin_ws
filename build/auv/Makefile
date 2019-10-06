@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+auv/CMakeFiles/autocontrol.dir/rule:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auv/CMakeFiles/autocontrol.dir/rule
+.PHONY : auv/CMakeFiles/autocontrol.dir/rule
+
+# Convenience name for target.
+autocontrol: auv/CMakeFiles/autocontrol.dir/rule
+
+.PHONY : autocontrol
+
+# fast build rule for target.
+autocontrol/fast:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/build
+.PHONY : autocontrol/fast
+
+# Convenience name for target.
 auv/CMakeFiles/gpsinfo.dir/rule:
 	cd /home/totoro/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auv/CMakeFiles/gpsinfo.dir/rule
 .PHONY : auv/CMakeFiles/gpsinfo.dir/rule
@@ -615,6 +630,33 @@ sensor_msgs_generate_messages_lisp/fast:
 	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
+src/autocontrol.o: src/autocontrol.cpp.o
+
+.PHONY : src/autocontrol.o
+
+# target to build an object file
+src/autocontrol.cpp.o:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o
+.PHONY : src/autocontrol.cpp.o
+
+src/autocontrol.i: src/autocontrol.cpp.i
+
+.PHONY : src/autocontrol.i
+
+# target to preprocess a source file
+src/autocontrol.cpp.i:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.i
+.PHONY : src/autocontrol.cpp.i
+
+src/autocontrol.s: src/autocontrol.cpp.s
+
+.PHONY : src/autocontrol.s
+
+# target to generate assembly for a file
+src/autocontrol.cpp.s:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.s
+.PHONY : src/autocontrol.cpp.s
+
 src/gpsinfo.o: src/gpsinfo.cpp.o
 
 .PHONY : src/gpsinfo.o
@@ -762,6 +804,7 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... autocontrol"
 	@echo "... gpsinfo"
 	@echo "... infoto_stm32"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -793,6 +836,9 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... infoto_digitaltrans"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... src/autocontrol.o"
+	@echo "... src/autocontrol.i"
+	@echo "... src/autocontrol.s"
 	@echo "... src/gpsinfo.o"
 	@echo "... src/gpsinfo.i"
 	@echo "... src/gpsinfo.s"

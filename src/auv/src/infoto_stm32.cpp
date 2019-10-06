@@ -21,14 +21,15 @@ public:
 	}
 	void DTCallback(const std_msgs::String::ConstPtr &msg)
 	{
-		if(msg->data == "#MANUALON")
+		if(msg->data == "#MOD01")
 		{
 			ManualMode=1;
 			ROS_INFO("MANUAL ON");
 		}
-		if(msg->data == "#MANUALOFF")
+		if(msg->data == "#MOD02" || msg->data == "#MOD03" || msg->data == "#MOD04" || msg->data == "#MOD05" || msg->data == "#MOD06")
 		{
 			ManualMode=0;
+			pub_.publish(msg);
 			ROS_INFO("MANUAL OFF");
 		}
 		if(ManualMode == 1)

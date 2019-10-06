@@ -246,7 +246,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=1,2,3 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=3,4,5 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -278,7 +278,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=4,5,6,7 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=6,7,8,9 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=10,11 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=12,13 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=12,13 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=14,15 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -390,6 +390,7 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory auv
 
 # Convenience name for "all" pass in the directory.
+auv/all: auv/CMakeFiles/autocontrol.dir/all
 auv/all: auv/CMakeFiles/gpsinfo.dir/all
 auv/all: auv/CMakeFiles/infoto_stm32.dir/all
 auv/all: auv/CMakeFiles/serial_stm32_pub.dir/all
@@ -399,6 +400,7 @@ auv/all: auv/CMakeFiles/infoto_digitaltrans.dir/all
 .PHONY : auv/all
 
 # Convenience name for "clean" pass in the directory.
+auv/clean: auv/CMakeFiles/autocontrol.dir/clean
 auv/clean: auv/CMakeFiles/gpsinfo.dir/clean
 auv/clean: auv/CMakeFiles/infoto_stm32.dir/clean
 auv/clean: auv/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
@@ -438,6 +440,67 @@ auv/preinstall:
 .PHONY : auv/preinstall
 
 #=============================================================================
+# Target rules for target auv/CMakeFiles/autocontrol.dir
+
+# All Build rule for target.
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/std_msgs_generate_messages_py.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/roscpp_generate_messages_py.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/roscpp_generate_messages_eus.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+auv/CMakeFiles/autocontrol.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/depend
+	$(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=1,2 "Built target autocontrol"
+.PHONY : auv/CMakeFiles/autocontrol.dir/all
+
+# Include target in all.
+all: auv/CMakeFiles/autocontrol.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+auv/CMakeFiles/autocontrol.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/totoro/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 auv/CMakeFiles/autocontrol.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/totoro/catkin_ws/build/CMakeFiles 0
+.PHONY : auv/CMakeFiles/autocontrol.dir/rule
+
+# Convenience name for target.
+autocontrol: auv/CMakeFiles/autocontrol.dir/rule
+
+.PHONY : autocontrol
+
+# clean rule for target.
+auv/CMakeFiles/autocontrol.dir/clean:
+	$(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/clean
+.PHONY : auv/CMakeFiles/autocontrol.dir/clean
+
+# clean rule for target.
+clean: auv/CMakeFiles/autocontrol.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target auv/CMakeFiles/gpsinfo.dir
 
 # All Build rule for target.
@@ -468,7 +531,7 @@ auv/CMakeFiles/gpsinfo.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_eus
 auv/CMakeFiles/gpsinfo.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f auv/CMakeFiles/gpsinfo.dir/build.make auv/CMakeFiles/gpsinfo.dir/depend
 	$(MAKE) -f auv/CMakeFiles/gpsinfo.dir/build.make auv/CMakeFiles/gpsinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=8,9 "Built target gpsinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=10,11 "Built target gpsinfo"
 .PHONY : auv/CMakeFiles/gpsinfo.dir/all
 
 # Include target in all.
@@ -529,7 +592,7 @@ auv/CMakeFiles/infoto_stm32.dir/all: auv/CMakeFiles/sensor_msgs_generate_message
 auv/CMakeFiles/infoto_stm32.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f auv/CMakeFiles/infoto_stm32.dir/build.make auv/CMakeFiles/infoto_stm32.dir/depend
 	$(MAKE) -f auv/CMakeFiles/infoto_stm32.dir/build.make auv/CMakeFiles/infoto_stm32.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=16,17 "Built target infoto_stm32"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=18,19 "Built target infoto_stm32"
 .PHONY : auv/CMakeFiles/infoto_stm32.dir/all
 
 # Include target in all.
@@ -1230,7 +1293,7 @@ auv/CMakeFiles/serial_stm32_pub.dir/all: auv/CMakeFiles/sensor_msgs_generate_mes
 auv/CMakeFiles/serial_stm32_pub.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f auv/CMakeFiles/serial_stm32_pub.dir/build.make auv/CMakeFiles/serial_stm32_pub.dir/depend
 	$(MAKE) -f auv/CMakeFiles/serial_stm32_pub.dir/build.make auv/CMakeFiles/serial_stm32_pub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=20,21 "Built target serial_stm32_pub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=22,23 "Built target serial_stm32_pub"
 .PHONY : auv/CMakeFiles/serial_stm32_pub.dir/all
 
 # Include target in all.
@@ -1387,7 +1450,7 @@ auv/CMakeFiles/serial_digitaltrans_pub.dir/all: auv/CMakeFiles/sensor_msgs_gener
 auv/CMakeFiles/serial_digitaltrans_pub.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f auv/CMakeFiles/serial_digitaltrans_pub.dir/build.make auv/CMakeFiles/serial_digitaltrans_pub.dir/depend
 	$(MAKE) -f auv/CMakeFiles/serial_digitaltrans_pub.dir/build.make auv/CMakeFiles/serial_digitaltrans_pub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=18,19 "Built target serial_digitaltrans_pub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=20,21 "Built target serial_digitaltrans_pub"
 .PHONY : auv/CMakeFiles/serial_digitaltrans_pub.dir/all
 
 # Include target in all.
@@ -1480,7 +1543,7 @@ auv/CMakeFiles/infoto_digitaltrans.dir/all: auv/CMakeFiles/sensor_msgs_generate_
 auv/CMakeFiles/infoto_digitaltrans.dir/all: auv/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f auv/CMakeFiles/infoto_digitaltrans.dir/build.make auv/CMakeFiles/infoto_digitaltrans.dir/depend
 	$(MAKE) -f auv/CMakeFiles/infoto_digitaltrans.dir/build.make auv/CMakeFiles/infoto_digitaltrans.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=14,15 "Built target infoto_digitaltrans"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/totoro/catkin_ws/build/CMakeFiles --progress-num=16,17 "Built target infoto_digitaltrans"
 .PHONY : auv/CMakeFiles/infoto_digitaltrans.dir/all
 
 # Include target in all.

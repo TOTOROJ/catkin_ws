@@ -34,6 +34,7 @@
 /home/totoro/catkin_ws/build/auv/CMakeFiles/test.dir
 /home/totoro/catkin_ws/build/auv/CMakeFiles/install/local.dir
 /home/totoro/catkin_ws/build/auv/CMakeFiles/install/strip.dir
+/home/totoro/catkin_ws/build/auv/CMakeFiles/autocontrol.dir
 /home/totoro/catkin_ws/build/auv/CMakeFiles/gpsinfo.dir
 /home/totoro/catkin_ws/build/auv/CMakeFiles/infoto_stm32.dir
 /home/totoro/catkin_ws/build/auv/CMakeFiles/geometry_msgs_generate_messages_py.dir

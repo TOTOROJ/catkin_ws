@@ -113,8 +113,6 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include ${catkin_INCLUDE_DIRS}
-# include
-  # ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -240,5 +238,13 @@ add_executable(gpsinfo
 )
 add_dependencies(gpsinfo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(gpsinfo
+  ${catkin_LIBRARIES}
+)
+
+add_executable(autocontrol
+  src/autocontrol.cpp
+)
+add_dependencies(autocontrol ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(autocontrol
   ${catkin_LIBRARIES}
 )

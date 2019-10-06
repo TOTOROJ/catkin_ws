@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named autocontrol
+
+# Build rule for target.
+autocontrol: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 autocontrol
+.PHONY : autocontrol
+
+# fast build rule for target.
+autocontrol/fast:
+	$(MAKE) -f auv/CMakeFiles/autocontrol.dir/build.make auv/CMakeFiles/autocontrol.dir/build
+.PHONY : autocontrol/fast
+
+#=============================================================================
 # Target rules for targets named gpsinfo
 
 # Build rule for target.
@@ -694,6 +707,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... autocontrol"
 	@echo "... gpsinfo"
 	@echo "... infoto_stm32"
 	@echo "... geometry_msgs_generate_messages_py"
