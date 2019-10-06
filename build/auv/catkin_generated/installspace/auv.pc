@@ -1,0 +1,8 @@
+prefix=/home/totoro/catkin_ws/install
+
+Name: auv
+Description: Description of auv
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/totoro/catkin_ws/install/lib 
+Requires: 

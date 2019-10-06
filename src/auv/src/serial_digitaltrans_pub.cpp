@@ -1,0 +1,62 @@
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+#include "serial/serial.h"
+
+
+serial::Serial sp;// serial handle
+
+void digitaltrans_callback(const std_msgs::String::ConstPtr& msg)
+{
+	sp.write(msg->data.c_str());
+	// ROS_INFO("1");
+	// ROS_INFO("%s",msg->data.c_str());
+}
+
+int main(int argc, char *argv[])
+{
+
+	ros::init(argc, argv, "serial_digitaltrans");
+	ros::NodeHandle n;
+	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("serial_digitaltrans_pub", 100);
+	ros::Subscriber chatter_sub = n.subscribe<std_msgs::String>("serial_digitaltrans_sub",100,digitaltrans_callback);
+	ros::Rate loop_rate(10);
+
+
+	serial::Timeout to = serial::Timeout::simpleTimeout(1000);
+	sp.setPort("/dev/ttyACM0");
+	sp.setBaudrate(9600);
+	sp.setTimeout(to);
+	try
+	{
+		sp.open();
+	}
+	catch (serial::IOException e)
+	{
+		ROS_ERROR("Unable to open port.");
+	}
+
+	if (sp.isOpen())
+	{
+		ROS_INFO("serial_digitaltrans is opened.");
+	}
+	else
+	{
+		return -1;
+	}
+	
+		
+
+	while (ros::ok())
+	{	
+		// ROS_INFO("1");		
+		std_msgs::String buf;
+		buf.data = sp.readline();
+		// ROS_INFO_STREAM(buf.data);
+		chatter_pub.publish(buf);
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
+
+	sp.close();
+	return 0;
+}

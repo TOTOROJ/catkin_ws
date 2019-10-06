@@ -1,0 +1,10 @@
+<launch>
+
+<node pkg="auv" name="gpsinfo" type="gpsinfo"> </node>
+<node pkg="auv"  name="serial_digitaltrans" type="serial_digitaltrans_pub"> </node>
+<node pkg="auv" name="serial_stm32" type="serial_stm32_pub" > </node>
+<node pkg="auv" name="info_to_stm32" type="infoto_stm32" > </node>
+<node pkg="auv" name="info_to_DT" type="infoto_digitaltrans" > </node>
+
+
+</launch>
