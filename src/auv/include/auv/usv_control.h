@@ -5,9 +5,11 @@
 #include "std_msgs/String.h"
 #include "vector"
 #include "sstream"
+#include "std_msgs/Float64MultiArray.h"
 
 
-enum NaviMode{ManualMode=200,AutoMode=201,LowSpeedMode=202,StableMode=203,ThrusterPower=204};
+
+enum NaviMode{ManualMode=200,AutoMode,LowSpeedMode,StableMode,ThrusterPower,AvoidMode,CircleMode};
 std::stringstream ss;
 ros::NodeHandle n;
 ros::Publisher pub_ = n.advertise<std_msgs::String>("autocontrol", 100);
@@ -36,7 +38,15 @@ void ChangeMode(NaviMode mode)
         case ThrusterPower:
             msg.data = "#MOD05";
             pub_.publish(msg);
-            break;         
+            break; 
+        case AvoidMode:
+            msg.data = "#MOD06";
+            pub_.publish(msg);
+            break;
+        case CircleMode:
+            msg.data = "#MOD07";
+            pub_.publish(msg);
+            break;
         default:
             ;
     }
@@ -66,8 +76,13 @@ void ModeStop(NaviMode mode)
             break;    
         case ThrusterPower:
 
+            break;    
+        case AvoidMode:
 
-            break;         
+            break;  
+        case CircleMode:
+
+            break;       
         default:
             ;
     }    
@@ -96,8 +111,14 @@ void ModeStart(NaviMode mode)
             break;    
         case ThrusterPower:
 
+            break;  
+        case AvoidMode:
 
-            break;         
+            break;  
+        case CircleMode:
+
+            break;  
+                               
         default:
             ;
     }    
@@ -107,7 +128,7 @@ void SendAutoMode(double lon,double lat)
 {
     std_msgs::String msg;
     ss.clear();
-    char str[100];
+    char str[100]={0};
     char sgn = 0;
 
     if(lon>0)
@@ -153,7 +174,7 @@ void SendLowSpeedMode(double lon, double lat,double dir)
 
     std_msgs::String msg;
     ss.clear();   
-    char str[100];
+    char str[100]={0};
     char sgn = 0;
 
     if(lon>0)
@@ -213,7 +234,7 @@ void SendStableMode(double lon, double lat,double dir)
 
     std_msgs::String msg;
     ss.clear();   
-    char str[100];
+    char str[100]={0};
     char sgn = 0;
 
     if(lon>0)
@@ -266,6 +287,108 @@ void SendStableMode(double lon, double lat,double dir)
 
     // ModeStart(StableMode);
 
+}
+
+
+void SendAvoidMode(double lon,double lat)
+{
+    std_msgs::String msg;
+    ss.clear();
+    char str[100]={0};
+    char sgn = 0;
+
+    if(lon>0)
+    {
+
+    }
+    else
+    {
+        lon = -lon;
+        sgn |= 0x80;
+    }
+    if(lat>0)
+    {
+
+    }
+    else
+    {
+        lat = -lat;
+        sgn |= 0x40;
+    }
+
+    unsigned char lon_int = (unsigned char)lon;
+    unsigned int lon_dec = (unsigned int)((lon - lon_int)*1e7);
+    unsigned char lat_int = (unsigned char)lat;
+    unsigned int lat_dec = (unsigned int)((lat - lat_int)*1e7);
+
+    str[0] = sgn;
+    *(int*)(&str[1]) = lon_int;
+    *(int*)(&str[2]) = lon_dec;
+    *(int*)(&str[6]) = lat_int;
+    *(int*)(&str[7]) = lat_dec;
+
+    ss << "#RPO" << str << "\r\n";
+    msg.data = ss.str();
+    pub_.publish(msg);
+
+    // ModeStart(AutoMode);
+}
+
+void SendCircleMode(double lon,double lat,double r)
+{
+    std_msgs::String msg;
+    ss.clear();
+    char str[100]={0};
+    char sgn = 0;
+
+    if(lon>0)
+    {
+
+    }
+    else
+    {
+        lon = -lon;
+        sgn |= 0x80;
+    }
+    if(lat>0)
+    {
+
+    }
+    else
+    {
+        lat = -lat;
+        sgn |= 0x40;
+    }
+    if(r>0)
+    {
+
+    }
+    else
+    {
+        r = -r;
+        sgn |= 0x20;
+    }
+
+    unsigned char lon_int = (unsigned char)lon;
+    unsigned int lon_dec = (unsigned int)((lon - lon_int)*1e7);
+    unsigned char lat_int = (unsigned char)lat;
+    unsigned int lat_dec = (unsigned int)((lat - lat_int)*1e7);
+    unsigned char r_int = (unsigned char)r;
+    unsigned int r_dec = (unsigned int)((r - r_int)*1e7);
+
+    str[0] = sgn;
+    *(int*)(&str[1]) = lon_int;
+    *(int*)(&str[2]) = lon_dec;
+    *(int*)(&str[6]) = lat_int;
+    *(int*)(&str[7]) = lat_dec;
+    *(int*)(&str[11]) = r_int;
+    *(int*)(&str[12]) = r_dec;
+
+    ss << "#RPC" << str << "\r\n";
+    msg.data = ss.str();
+    pub_.publish(msg);
+
+    // ModeStart(AutoMode);
 }
 
 #endif 

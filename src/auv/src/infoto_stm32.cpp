@@ -21,12 +21,12 @@ public:
 	}
 	void DTCallback(const std_msgs::String::ConstPtr &msg)
 	{
-		if(msg->data == "#MOD01")
+		if(msg->data.substr(0,6) == "#MOD01")
 		{
 			ManualMode=1;
 			ROS_INFO("MANUAL ON");
 		}
-		if(msg->data == "#MOD02" || msg->data == "#MOD03" || msg->data == "#MOD04" || msg->data == "#MOD05" || msg->data == "#MOD06")
+		if(msg->data.substr(0,6) == "#MOD02" || msg->data.substr(0,6) == "#MOD03" || msg->data.substr(0,6) == "#MOD04" || msg->data.substr(0,6) == "#MOD05" || msg->data.substr(0,6) == "#MOD06")
 		{
 			ManualMode=0;
 			pub_.publish(msg);

@@ -29,7 +29,7 @@ public:
 	{
 		SynLonLatVDir(str,lon,lat,v,dir);
 		ss.clear();
-		ss << "#AUVINFO" << str;
+		ss << "#AUVINFO" << str << "\r\n";
 		msg.data = ss.str();
 		pub_.publish(msg);
 		memset(str,0,sizeof(str));
@@ -140,6 +140,4 @@ void Info_to_digitaltrans::SynLonLatVDir(char* str,double lon, double lat,double
     *(int*)(&str[12]) = v_dec;
 	*(int*)(&str[13]) = dir_int;
 	*(int*)(&str[14]) = dir_dec;
-
-	str[18] = '\r';str[19]='\n';
 }
