@@ -7,7 +7,7 @@ serial::Serial sp;// serial handle
 
 void digitaltrans_callback(const std_msgs::String::ConstPtr& msg)
 {
-	sp.write(msg->data.c_str());
+	sp.write(msg->data);
 	// ROS_INFO("1");
 	// ROS_INFO("%s",msg->data.c_str());
 }
@@ -50,8 +50,17 @@ int main(int argc, char *argv[])
 	{	
 		// ROS_INFO("1");		
 		std_msgs::String buf;
-		buf.data = sp.readline();
-		// ROS_INFO_STREAM(buf.data);
+		buf.data = sp.readline(65536,"\r\n");
+
+		char str[10]={0};
+		buf.data.copy(str,6);
+		for (size_t i = 0; i < 7; i++)
+		{
+			printf("%02x",str[i]);
+		}
+		printf("\n");
+		
+
 		chatter_pub.publish(buf);
 		ros::spinOnce();
 		loop_rate.sleep();

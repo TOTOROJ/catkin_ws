@@ -6,7 +6,7 @@ serial::Serial sp;// serial handle
 
 void stm32_callback(const std_msgs::String::ConstPtr& msg)
 {
-	sp.write(msg->data.c_str());
+	sp.write(msg->data);
 	// ROS_INFO("1");
 	// ROS_INFO("%s",msg->data.c_str());
 }
@@ -49,8 +49,10 @@ int main(int argc, char *argv[])
 	{	
 		// ROS_INFO("1");		
 		std_msgs::String buf;
-		buf.data = sp.readline();
+		buf.data = sp.readline(65536,"\r\n");
+
 		// ROS_INFO_STREAM(buf.data);
+
 		chatter_pub.publish(buf);
 		ros::spinOnce();
 		loop_rate.sleep();

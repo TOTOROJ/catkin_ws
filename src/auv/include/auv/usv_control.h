@@ -3,9 +3,8 @@
 
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#include "vector"
 #include "sstream"
-#include "std_msgs/Float64MultiArray.h"
+#include "string"
 
 
 
@@ -161,7 +160,8 @@ void SendAutoMode(double lon,double lat)
     *(int*)(&str[6]) = lat_int;
     *(int*)(&str[7]) = lat_dec;
 
-    ss << "#RPG" << str << "\r\n";
+    std::string tmp(str,11);
+    ss << "#RPG" << tmp << "\r\n";
     msg.data = ss.str();
     pub_.publish(msg);
 
@@ -221,7 +221,8 @@ void SendLowSpeedMode(double lon, double lat,double dir)
     *(int*)(&str[11]) = dir_int;
     *(int*)(&str[12]) = dir_dec;
 
-    ss << "#LPG" << str << "\r\n";
+    std::string tmp(str,16);
+    ss << "#LPG" << tmp << "\r\n";
     msg.data = ss.str();
     pub_.publish(msg);
 
@@ -233,7 +234,7 @@ void SendStableMode(double lon, double lat,double dir)
 {
 
     std_msgs::String msg;
-    ss.clear();   
+    // ss.clear();   
     char str[100]={0};
     char sgn = 0;
 
@@ -281,7 +282,8 @@ void SendStableMode(double lon, double lat,double dir)
     *(int*)(&str[11]) = dir_int;
     *(int*)(&str[12]) = dir_dec;
 
-    ss << "#SPG" << str << "\r\n";
+    std::string tmp(str,16);
+    ss << "#SPG" << tmp << "\r\n";
     msg.data = ss.str();
     pub_.publish(msg);
 
@@ -326,15 +328,15 @@ void SendAvoidMode(double lon,double lat)
     *(int*)(&str[2]) = lon_dec;
     *(int*)(&str[6]) = lat_int;
     *(int*)(&str[7]) = lat_dec;
-
-    ss << "#RPO" << str << "\r\n";
+    std::string tmp(str,11);
+    ss << "#RPO" << tmp << "\r\n";
     msg.data = ss.str();
     pub_.publish(msg);
 
     // ModeStart(AutoMode);
 }
 
-void SendCircleMode(double lon,double lat,double r)
+void SendCircleMode(double lon,double lat,double r=100)
 {
     std_msgs::String msg;
     ss.clear();
@@ -359,32 +361,33 @@ void SendCircleMode(double lon,double lat,double r)
         lat = -lat;
         sgn |= 0x40;
     }
-    if(r>0)
-    {
+    // if(r>0)
+    // {
 
-    }
-    else
-    {
-        r = -r;
-        sgn |= 0x20;
-    }
+    // }
+    // else
+    // {
+    //     r = -r;
+    //     sgn |= 0x20;
+    // }
 
     unsigned char lon_int = (unsigned char)lon;
     unsigned int lon_dec = (unsigned int)((lon - lon_int)*1e7);
     unsigned char lat_int = (unsigned char)lat;
     unsigned int lat_dec = (unsigned int)((lat - lat_int)*1e7);
-    unsigned char r_int = (unsigned char)r;
-    unsigned int r_dec = (unsigned int)((r - r_int)*1e7);
+    // unsigned char r_int = (unsigned char)r;
+    // unsigned int r_dec = (unsigned int)((r - r_int)*1e7);
 
     str[0] = sgn;
     *(int*)(&str[1]) = lon_int;
     *(int*)(&str[2]) = lon_dec;
     *(int*)(&str[6]) = lat_int;
     *(int*)(&str[7]) = lat_dec;
-    *(int*)(&str[11]) = r_int;
-    *(int*)(&str[12]) = r_dec;
+    // *(int*)(&str[11]) = r_int;
+    // *(int*)(&str[12]) = r_dec;
 
-    ss << "#RPC" << str << "\r\n";
+    std::string tmp(str,11);
+    ss << "#RPC" << tmp << "\r\n";
     msg.data = ss.str();
     pub_.publish(msg);
 

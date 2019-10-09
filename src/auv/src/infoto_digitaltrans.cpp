@@ -29,7 +29,8 @@ public:
 	{
 		SynLonLatVDir(str,lon,lat,v,dir);
 		ss.clear();
-		ss << "#AUVINFO" << str << "\r\n";
+		std::string tmp(str,18);
+		ss << "#AUVINFO" << tmp << "\r\n";
 		msg.data = ss.str();
 		pub_.publish(msg);
 		memset(str,0,sizeof(str));
