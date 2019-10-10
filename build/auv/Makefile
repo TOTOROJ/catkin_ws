@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+auv/CMakeFiles/mytest.dir/rule:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auv/CMakeFiles/mytest.dir/rule
+.PHONY : auv/CMakeFiles/mytest.dir/rule
+
+# Convenience name for target.
+mytest: auv/CMakeFiles/mytest.dir/rule
+
+.PHONY : mytest
+
+# fast build rule for target.
+mytest/fast:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/mytest.dir/build.make auv/CMakeFiles/mytest.dir/build
+.PHONY : mytest/fast
+
+# Convenience name for target.
 auv/CMakeFiles/autocontrol.dir/rule:
 	cd /home/totoro/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 auv/CMakeFiles/autocontrol.dir/rule
 .PHONY : auv/CMakeFiles/autocontrol.dir/rule
@@ -792,6 +807,33 @@ src/serial_stm32_pub.cpp.s:
 	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/serial_stm32_pub.dir/build.make auv/CMakeFiles/serial_stm32_pub.dir/src/serial_stm32_pub.cpp.s
 .PHONY : src/serial_stm32_pub.cpp.s
 
+src/test.o: src/test.cpp.o
+
+.PHONY : src/test.o
+
+# target to build an object file
+src/test.cpp.o:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/mytest.dir/build.make auv/CMakeFiles/mytest.dir/src/test.cpp.o
+.PHONY : src/test.cpp.o
+
+src/test.i: src/test.cpp.i
+
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.cpp.i:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/mytest.dir/build.make auv/CMakeFiles/mytest.dir/src/test.cpp.i
+.PHONY : src/test.cpp.i
+
+src/test.s: src/test.cpp.s
+
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.cpp.s:
+	cd /home/totoro/catkin_ws/build && $(MAKE) -f auv/CMakeFiles/mytest.dir/build.make auv/CMakeFiles/mytest.dir/src/test.cpp.s
+.PHONY : src/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -804,6 +846,7 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... mytest"
 	@echo "... autocontrol"
 	@echo "... gpsinfo"
 	@echo "... infoto_stm32"
@@ -854,6 +897,9 @@ help:
 	@echo "... src/serial_stm32_pub.o"
 	@echo "... src/serial_stm32_pub.i"
 	@echo "... src/serial_stm32_pub.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 

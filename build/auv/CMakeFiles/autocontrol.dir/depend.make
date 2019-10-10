@@ -59,6 +59,9 @@ auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/r
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatFix.h
+auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
+auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 auv/CMakeFiles/autocontrol.dir/src/autocontrol.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

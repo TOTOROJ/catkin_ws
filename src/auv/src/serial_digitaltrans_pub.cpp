@@ -52,13 +52,13 @@ int main(int argc, char *argv[])
 		std_msgs::String buf;
 		buf.data = sp.readline(65536,"\r\n");
 
-		char str[10]={0};
-		buf.data.copy(str,6);
-		for (size_t i = 0; i < 7; i++)
-		{
-			printf("%02x",str[i]);
-		}
-		printf("\n");
+		// char str[10]={0};
+		// buf.data.copy(str,6);
+		// for (size_t i = 0; i < 7; i++)
+		// {
+		// 	printf("%02x",str[i]);
+		// }
+		// printf("\n");
 		
 
 		chatter_pub.publish(buf);

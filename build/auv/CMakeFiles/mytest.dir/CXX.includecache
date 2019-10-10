@@ -6,21 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/totoro/catkin_ws/src/auv/include/auv/usv_control.h
-ros/ros.h
-/home/totoro/catkin_ws/src/auv/include/auv/ros/ros.h
-std_msgs/String.h
-/home/totoro/catkin_ws/src/auv/include/auv/std_msgs/String.h
-sstream
-/home/totoro/catkin_ws/src/auv/include/auv/sstream
+/home/totoro/catkin_ws/src/auv/include/auv/mytest.h
 string
 /home/totoro/catkin_ws/src/auv/include/auv/string
+ros/ros.h
+/home/totoro/catkin_ws/src/auv/include/auv/ros/ros.h
+stdio.h
+/home/totoro/catkin_ws/src/auv/include/auv/stdio.h
 
-/home/totoro/catkin_ws/src/auv/src/autocontrol.cpp
-auv/usv_control.h
-/home/totoro/catkin_ws/src/auv/src/auv/usv_control.h
+/home/totoro/catkin_ws/src/auv/src/test.cpp
+auv/mytest.h
+/home/totoro/catkin_ws/src/auv/src/auv/mytest.h
+ros/ros.h
+/home/totoro/catkin_ws/src/auv/src/ros/ros.h
+std_msgs/String.h
+/home/totoro/catkin_ws/src/auv/src/std_msgs/String.h
+stdio.h
+/home/totoro/catkin_ws/src/auv/src/stdio.h
 sensor_msgs/NavSatFix.h
 /home/totoro/catkin_ws/src/auv/src/sensor_msgs/NavSatFix.h
+std_msgs/Float64.h
+/home/totoro/catkin_ws/src/auv/src/std_msgs/Float64.h
+string.h
+/home/totoro/catkin_ws/src/auv/src/string.h
+sstream
+/home/totoro/catkin_ws/src/auv/src/sstream
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h
@@ -689,6 +699,22 @@ sensor_msgs/NavSatStatus.h
 -
 
 /opt/ros/kinetic/include/sensor_msgs/NavSatStatus.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/std_msgs/Float64.h
 string
 -
 vector

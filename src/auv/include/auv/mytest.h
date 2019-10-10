@@ -1,10 +1,10 @@
-#ifndef _DISP_H_
-#define _DISP_H_
+#ifndef _MY_TEST_H_
+#define _MY_TEST_H_
 
 #include "string"
 #include "ros/ros.h"
 #include "stdio.h"
-#include "iostream"
+// #include "iostream"
 
 
 
@@ -15,9 +15,10 @@ void DispData(std::string msg)
     msg.copy(str,len);
     for (size_t i = 0; i < len; i++)
     {
-        printf("%02x",str[i]);
+        printf(" %02x ",str[i]);
     }
-    fflush();
+    printf("\n");
+    fflush(stdout);
 }
 
 

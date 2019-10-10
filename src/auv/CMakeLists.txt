@@ -248,3 +248,12 @@ add_dependencies(autocontrol ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORT
 target_link_libraries(autocontrol
   ${catkin_LIBRARIES}
 )
+
+
+add_executable(mytest
+  src/test.cpp
+)
+add_dependencies(mytest ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(mytest
+  ${catkin_LIBRARIES}
+)

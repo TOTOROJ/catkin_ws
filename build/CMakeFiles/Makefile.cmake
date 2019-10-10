@@ -190,6 +190,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "gtest/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "auv/CMakeFiles/mytest.dir/DependInfo.cmake"
   "auv/CMakeFiles/autocontrol.dir/DependInfo.cmake"
   "auv/CMakeFiles/gpsinfo.dir/DependInfo.cmake"
   "auv/CMakeFiles/infoto_stm32.dir/DependInfo.cmake"

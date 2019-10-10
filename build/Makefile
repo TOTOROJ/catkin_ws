@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named mytest
+
+# Build rule for target.
+mytest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mytest
+.PHONY : mytest
+
+# fast build rule for target.
+mytest/fast:
+	$(MAKE) -f auv/CMakeFiles/mytest.dir/build.make auv/CMakeFiles/mytest.dir/build
+.PHONY : mytest/fast
+
+#=============================================================================
 # Target rules for targets named autocontrol
 
 # Build rule for target.
@@ -707,6 +720,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... mytest"
 	@echo "... autocontrol"
 	@echo "... gpsinfo"
 	@echo "... infoto_stm32"
