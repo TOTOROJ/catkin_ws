@@ -6,23 +6,23 @@
 #include "sstream"
 #include "string"
 
-// enum NaviMode{ManualMode=200,AutoMode,LowSpeedMode,StableMode,ThrusterPower,AvoidMode,CircleMode};
+enum NaviMode{ManualMode=200,AutoMode,LowSpeedMode,StableMode,ThrusterPower,AvoidMode,CircleMode};
 
-// class AutoControl
-// {
+class AutoControl
+{
 
 
-// private:
-//     std::stringstream ss;
-//     ros::NodeHandle n;
-//     ros::Publisher pub_;
-//     ros::Subscriber sub_;
-// public:
-//     AutoControl()
-//     {
-//         // sub_ = n_.subscribe("topic", 100, &AutoControl::Callback,this);
-//         pub_ = n.advertise<std_msgs::String>("autocontrol", 100);
-//     }
+private:
+    std::stringstream ss;
+    ros::NodeHandle n;
+    ros::Publisher pub_;
+    ros::Subscriber sub_;
+public:
+    AutoControl()
+    {
+        // sub_ = n_.subscribe("topic", 100, &AutoControl::Callback,this);
+        pub_ = n.advertise<std_msgs::String>("autocontrol", 100);
+    }
 
 void ChangeMode(NaviMode mode)
 {
@@ -405,7 +405,7 @@ void SendCircleMode(double lon,double lat,double r=100)
     // ModeStart(AutoMode);
 }
 
-// };
+};
 
 
 
